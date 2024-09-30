@@ -79,7 +79,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
       * `canonical` is the canonical URL of IGs following this layout rule. It is either fully specified, or describes how to create canonical URLs from the package id components. This example shows a canonical generated using the third component of the package id.
       * `destination` is the location under `url` for the IG publication. This usually agrees with the information in `canonical`.
 
-7. Create `staging/package-feed.xml`, updating fields as appropriate for your publication.
+7. Create `staging/publication-feed.xml`, updating fields as appropriate for your publication.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -92,7 +92,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
          <link>http://example.org/ig</link>
          <generator>Example Organization</generator>
          <lastBuildDate>Thu, 23 Mar 2023 12:00:00 GMT</lastBuildDate>
-         <atom:link href="http://example.org/ig/package-feed.xml" rel="self" type="application/rss+xml" />
+         <atom:link href="http://example.org/ig/publication-feed.xml" rel="self" type="application/rss+xml" />
          <pubDate>Thu, 23 Mar 2023 12:00:00 GMT</pubDate>
          <language>en</language>
          <ttl>600</ttl>
@@ -104,7 +104,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
 
    This defines the RSS feed used by the FHIR registry to find all the versions of all the implementation guides published on your site.
 
-8. Copy `staging/package-feed.xml` to `staging/publication-feed.xml`, and update file name in the `<atom:link>` element. This file defines the RSS feed used by the FHIR registry to find the packages for the implementation guides published on your site.
+8. Copy `staging/publication-feed.xml` to `staging/package-feed.xml`, and update file name in the `<atom:link>` element. This file defines the RSS feed used by the FHIR registry to find the packages for the implementation guides published on your site.
 
 9. Download the latest HL7 IG Publisher to a convenient location.
 
@@ -116,7 +116,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
 
    ```sh
    $ cd ~/src/publisher
-   $ java -jar ../publisher.jar -generate-package-registry /home/elliot/src/publication/staging
+   $ java -jar ../publisher.jar -generate-package-registry staging
    ```
 
 Your publication workspace is now prepared. If appropriate, you may want to commit the publication directory repository.
