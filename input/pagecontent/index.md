@@ -56,7 +56,7 @@ One of key and early decisions in authoring an IG is whether to use HL7's IG pub
 
 * Commercial vs open source model, and associated factors including cost, license, support, stability
 * Enforcement of "best practices," error checking and "correctness"
-* Integration with resource authoring tools such as [Firely's Forge](https://fire.ly/products/forge/) or HL7 (SUSHI](https://fshschool.org))
+* Integration with resource authoring tools such as [Firely's Forge](https://fire.ly/products/forge/) or HL7 [SUSHI](https://fshschool.org))
 * Command-line "compiler"-style interface vs. WYSIWYG
 * Content management and versioning approach during authoring
 * Control over look-and-feel, ADA compliance, and multi-language support
