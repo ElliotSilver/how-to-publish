@@ -62,7 +62,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
       "layout-rules": [
          {
             "npm": "org.example.*",
-            "canonical": "http://examples.org/ig/{3}",
+            "canonical": "http://example.org/ig/{3}",
             "destination": "/{3}"
          }
       ]
