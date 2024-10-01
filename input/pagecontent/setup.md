@@ -22,11 +22,11 @@ Before using IG Publisher to publish your implementation guides, you need to set
 
    ```sh
    $ cd publication
-   $ mkdir templates staging
+   $ mkdir templates webroot
    $ cp ../fhir-web-templates/*template* templates
    ```
 
-   This creates a `staging` directory, creates a `templates` directory and populates it with the customizable portion of the history templates, and puts a copy of the IG Publisher in the publication directory.
+   This creates a `webroot` directory, creates a `templates` directory and populates it with the customizable portion of the history templates, and puts a copy of the IG Publisher in the publication directory.
 
    You may now delete the `fhir-web-templates` repo.
 
@@ -41,9 +41,9 @@ Before using IG Publisher to publish your implementation guides, you need to set
    * Organizational logos or text in the page header
    * The copyright statement to display
 
-   Supporting files should be added to `staging/assets`.
+   Supporting files should be added to `webroot/assets`.
 
-6. In the `publication` directory, create the [publication configuration](https://confluence.hl7.org/display/FHIR/Maintaining+a+FHIR+IG+Publication) file `staging/publish-setup.json`, updating fields as appropriate for your site.
+6. In the `publication` directory, create the [publication configuration](https://confluence.hl7.org/display/FHIR/Maintaining+a+FHIR+IG+Publication) file `webroot/publish-setup.json`, updating fields as appropriate for your site.
 
    ```json
    {
@@ -79,7 +79,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
       * `canonical` is the canonical URL of IGs following this layout rule. It is either fully specified, or describes how to create canonical URLs from the package id components. This example shows a canonical generated using the third component of the package id.
       * `destination` is the location under `url` for the IG publication. This usually agrees with the information in `canonical`.
 
-7. Create `staging/publication-feed.xml`, updating fields as appropriate for your publication.
+7. Create `webroot/publication-feed.xml`, updating fields as appropriate for your publication.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -104,7 +104,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
 
    This defines the RSS feed used by the FHIR registry to find all the versions of all the implementation guides published on your site.
 
-8. Copy `staging/publication-feed.xml` to `staging/package-feed.xml`, and update file name in the `<atom:link>` element. This file defines the RSS feed used by the FHIR registry to find the packages for the implementation guides published on your site.
+8. Copy `webroot/publication-feed.xml` to `webroot/package-feed.xml`, and update file name in the `<atom:link>` element. This file defines the RSS feed used by the FHIR registry to find the packages for the implementation guides published on your site.
 
 9. Download the latest HL7 IG Publisher to a convenient location.
 
@@ -112,12 +112,31 @@ Before using IG Publisher to publish your implementation guides, you need to set
    $ curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o ~/src/publisher.jar
    ```
 
-10. From the publication directory, generate `staging/package-registry.json`:
+10. From the publication directory, generate `webroot/package-registry.json`:
 
    ```sh
    $ cd ~/src/publisher
-   $ java -jar ../publisher.jar -generate-package-registry staging
+   $ java -jar ../publisher.jar -generate-package-registry webroot
    ```
+
+11. Update `package-feeds.xml` in the `ig-registry` repo, so that the registry will know about your packages. Add your feed to the `feeds` array:
+
+   ```json
+   {
+     "comment" : "The order of the feeds does not matter, but the order of the package-restrictions does",
+     "feeds": [
+        ...
+        {
+           "name": "Example Organization FHIR Implementation Guides",
+           "url": "http://example.org/ig/package-feed.xml",
+           "errors": "admin|example_org"
+        }
+     ],
+     "package-restrictions": [
+        ...
+   }
+   ```
+   The `errors` element contains the contact email for this feed, replacing `@` and `.` with `|` and `_`.
 
 Your publication workspace is now prepared. If appropriate, you may want to commit the publication directory repository.
 
