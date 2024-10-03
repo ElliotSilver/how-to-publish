@@ -18,13 +18,13 @@ The steps below describe how to publish an implementation guide using IG Publish
    $ git checkout -b v1.0.0
    ```  
 
-2. Review your IG's ImplementationGuide resource (or `sushi-config.yaml`) and update as needed.
+1. Review your IG's ImplementationGuide resource (or `sushi-config.yaml`) and update as needed.
 
    * IG canonical aligns with your main publication location (e.g. `http://example.org/ig/myig`)
    * IG `status` (see [Publication Status](http://hl7.org/fhir/ValueSet/publication-status)), `releaseLabel` (see [IG Parameters](http://hl7.org/fhir/tools/CodeSystem/ig-parameters)), `date` (if explicitly set), and `version` elements are all correct for your published IG.
    * Dependencies (including the template specified in `igi.ini`) are up to date and set to specific versions.
   
-3. Ensure you are starting from a known state.
+1. Ensure you are starting from a known state.
 
    * Delete contents of your FHIR cache directory `~/.fhir`, except for `fhir-settings.json` if it exists
    * Delete `fsh-generated`, `input-cache`, `output`, `temp`, and `template` directories from the IG project
@@ -35,7 +35,7 @@ The steps below describe how to publish an implementation guide using IG Publish
       $ npm update -g fsh-sushi
       ```
 
-4. Create (or update) `publication-request.json` in your IG root directory, filling it out appropriately for your IG:
+1. Create (or update) `publication-request.json` in your IG root directory, filling it out appropriately for your IG:
 
    ```json
    {
@@ -61,7 +61,7 @@ The steps below describe how to publish an implementation guide using IG Publish
    | `package-id` | | The IG package id, matching the value from `sushi-config.yaml` or your ImplementationGuide resource |
    | `version`    | | The IG version, matching the value from `sushi-config.yaml` or your ImplementationGuide resource |
    | `path`	      | | The permanent full URL at which the IG will be available. This must be of the form `[canonical]/[label]`, where `[canonical]` is the canonical URL of your IG, and `[label]` is the version or another label for this release (e.g. "STU1"). |
-   | `mode`       | | {::nomarkdown}One of:<ul><li><code class=" highlighter-rouge language-plaintext">working</code> (publish at <code class=" highlighter-rouge language-plaintext">path</code>, but don't update which publication is "current");</li><li><code class=" highlighter-rouge language-plaintext">milestone</code> (publish at <code class=" highlighter-rouge language-plaintext">path</code> and at the canonical, making this the "current" release);</li><li><code class=" highlighter-rouge language-plaintext">technical-correction</code> (replace the content at <code class=" highlighter-rouge language-plaintext">path</code>; if the content at <code class=" highlighter-rouge language-plaintext">path</code> is the "current" release, replace the content at the canonical also)</ul>{:/} |
+   | `mode`       | | {::nomarkdown}One of:<ul><li><code class=" highlighter-rouge language-plaintext">working</code> (publish at <code class=" highlighter-rouge language-plaintext">path</code>, but don't update which publication is "current");</li><li><code class=" highlighter-rouge language-plaintext">milestone</code> (publish at <code class=" highlighter-rouge language-plaintext">path</code> and at the canonical, making this the "current" release);</li><li><code class=" highlighter-rouge language-plaintext">technical-correction</code> (replace the content at <code class=" highlighter-rouge language-plaintext">path</code>; if the content at <code class=" highlighter-rouge language-plaintext">path</code> is the "current" release, replace the content at the canonical also)</ul>{:/nomarkdown} |
    | `status`     | | The IG release status, typically `release`, `trial-use`, `draft`, or `normative` (or [other options](https://confluence.hl7.org/display/FHIR/IG+Publication+Request+Documentation)); often matches the IG `releaselabel`. |
    | `sequence`   | | The release sequence, e.g. "Release 1," that this publication is part of; or, "Publication," "Release," or similar, if not using release sequences. This determines grouping on the history page. |
    | `desc`<br>`descmd`	| | The description of the release shown on the IG history page, as plain text (desc), or as markdown (descmd). Markdown is read from the file specified using "@[filename.md]". |
@@ -69,11 +69,11 @@ The steps below describe how to publish an implementation guide using IG Publish
    | `first`      | | Set to `true` on first publication of this IG; `false` or omit otherwise |
    | `title`      | &#10003; | The human readable name of the IG |
    | `ci-build`   | &#10003; | The location of the continuous integration build of the IG; often under [`http://build.fhir.org/ig/`](http://build.fhir.org/ig/) |
-   | `category`   | &#10003; | A category for the guide; see the categories on the [FHIR registry](http://fhir.org/guides/registry/). | 
+   | `category`   | &#10003; | A category for the guide; see the categories on the [FHIR registry](http://fhir.org/guides/registry/). |
    | `introduction` | &#10003; | A human readable description of the intent of the IG; shown on the IG history page. |
    {:.table-striped}
 
-5. Ensure you can do a clean build of the IG.
+1. Ensure you can do a clean build of the IG.
 
    ```sh
    $ ./_genonce.sh
@@ -83,7 +83,7 @@ The steps below describe how to publish an implementation guide using IG Publish
 
 ### Do a Publication Run and Upload
 
-2. Create a branch of the `ig-registry` repo.
+1. If you haven't already, create a branch of the `ig-registry` repo.
 
    ```sh
    $ cd ~/src/ig-registry
@@ -91,15 +91,15 @@ The steps below describe how to publish an implementation guide using IG Publish
    ```
 
 1. Switch to the the `publication` directory. Ensure you have a current copy of the IG Publisher.
- 
+
    ```sh
    $ cd ~/src/publication
    $ curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o ~/src/publisher.jar
    ```
- 
-2. Run the IG Publisher in "publish" mode:
- 
-   ```
+
+1. Run the IG Publisher in "publish" mode:
+
+   ```sh
    $ cd ~/src/publication
    $ java -jar ../publisher.jar -go-publish \
       -source    /home/username/src/my-ig \
@@ -111,6 +111,7 @@ The steps below describe how to publish an implementation guide using IG Publish
    ```
 
    Files or directories must either be under the `publication` directory or specified using an absolute path.
+
    * `source` - the IG to publish
    * `web` - the base staging directory to put the generated files into
    * `history` - the source directory for the history templates
@@ -120,7 +121,7 @@ The steps below describe how to publish an implementation guide using IG Publish
 
    Running `-go-publish` may build your IG multiple times as part of the process.
 
-3. Run the Jekyll web server and review the generated IG.
+1. Run the Jekyll web server and review the generated IG.
 
    ```sh
    $ jekyll server -s webroot
@@ -128,7 +129,7 @@ The steps below describe how to publish an implementation guide using IG Publish
 
    The IG is accessible at <http://127.0.0.1:4000>.
 
-4. Upload the contents of the `webroot` directory to your website (<http://example.org/ig>), and review the publication.
+1. Upload the contents of the `webroot` directory to your website (<http://example.org/ig>), and review the publication.
 
 You have now published your IG to your website.
 
@@ -136,22 +137,23 @@ You have now published your IG to your website.
 
 Once you are confident that the website is updated correctly, commit your changes.
 
-1. The publication process updates the list of publications known to the general FHIR tooling. In the `ig-registry` repo: 
+1. The publication process updates the list of publications known to the general FHIR tooling. In the `ig-registry` repo:
+
    1. Find the entry for your IG in `fhir-ig-list.json`, and update the missing information (shown as `"??"`). Fill in `description`, `authority` (your organization, or omit for personal sites), and `country` (two letter country codes).
 
-   2. Commit the changes, push the changes upstream, and make a pull request to merge the changes back to the `FHIR/ig-registry` repo. Once these changes are accepted, FHIR ecosystem tooling will be aware of your IG publication.
+   1. Commit the changes, push the changes upstream, and make a pull request to merge the changes back to the `FHIR/ig-registry` repo. Once these changes are accepted, FHIR ecosystem tooling will be aware of your IG publication.
 
-2. Typically, you'll now want to commit two versions of your implementation guide to your repo.
-   
+1. Typically, you'll now want to commit two versions of your implementation guide to your repo.
+
    1. Commit the as-published version of your IG, and tag it. This will enable you to come back to this version if you need to republish, or issue an update.
-   
-   2. Commit a version of your IG ready for the next round of development, and commit. To update your IG for further development,
+
+   1. Commit a version of your IG ready for the next round of development, and commit. To update your IG for further development,
 
       * In your ImplementationGuide resource (or `sushi-config.yaml`), update the `status`, `releaseLabel`, and `version` elements as appropriate for the CI build; and revert dependencies to use the `current` version, if desired (also, the template version in `ig.ini`).
       * Remove first-time elements from `publication-request.json`, and update other elements for the next release.
       * Commit the changes to your implementation guide repo.
 
-3. If you are storing the publication website in a repository, you may wish to commit the contents of the `publication` directory.
+1. If you are storing the publication website in a repository, you may wish to commit the contents of the `publication` directory.
 
 ### Directory structure
 

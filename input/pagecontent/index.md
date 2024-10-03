@@ -5,7 +5,7 @@ This IG is not a tutorial on IG authoring; on general IG Publisher usage; or, on
 Once an IG has been authored using IG Publisher, there are several ways to make it available to the public:
 
 * Using the HL7 [Auto-build](#ci-auto-build) functionality to publish the IG.
-* Uploading the IG Publisher build output [directly](#upload-to-a-web-server) to a website
+* Uploading the IG Publisher build output [directly](#upload) to a website
 * Using the [IG Publisher `-go-publish`](#using-ig-publishers--go-publish-function) function to stage an IG publication, then upload it to a website.
 
 Alternatively, the IG could be authored and published through [Firely](https://fire.ly)'s [Simplifier](https://simplifier.net) product.
@@ -34,7 +34,7 @@ On the other hand, the auto-build is a decent way to make your continuous integr
 
 Note that the IG Publisher publication process described in this IG can reference auto-built IGs as part of the history of published versions, and in the registry feeds.
 
-### Upload to a Web Server
+### Upload to a Web Server or Github Pages {#upload}
 
 Another option to make your content available, is to upload the contents of the IG Publisher-generated `output` directory directly to a web server, or to copy it to [Github Pages](http://github.io). (Setting up automated builds and copying to Github Pages is covered in the [author's blog](http://www.argentixinfo.com/archives/156).)
 
@@ -62,7 +62,7 @@ One of key and early decisions in authoring an IG is whether to use HL7's IG pub
 * Control over look-and-feel, ADA compliance, and multi-language support
 * Local vs. online; internal vs. SaaS.
 
-However, for the purposes of this discussion, the biggest difference is that a Simplifier license includes a website to publish the IG to. IG Publisher requires you to have a website to host your publication. 
+However, for the purposes of this discussion, the biggest difference is that a Simplifier license includes a website to publish the IG to. IG Publisher requires you to have a website to host your publication.
 
 Publishing on your own website provides an additional level of control that many prefer, including better integration. Note though, that it is possible to download and self-host a Simplifier IG.
 
@@ -83,13 +83,13 @@ Using this `-go-publish` functionality is the subject of this IG.
 
 ### Next Steps
 
-The remainder of this implementation guide discusses the one-time process needed to [set up](./setup.html) an environment for publication, and the process needed to publish each release of [each publication](./publication.html). 
+The remainder of this implementation guide discusses the one-time process needed to [set up](./setup.html) an environment for publication, and the process needed to publish each release of [each publication](./publication.html).
 
 As a pre-requisite for the processes described in this guide, you should have write access to a website that you control, and be familiar with the process for uploading content to it. This guide assumes your publication website aligns with the canonical URLs for your IGs. (Alignment of canonicals is not strictly necessary; however, this is the most common approach, and some functionality won't work unless the canonicals align.) You should also be familiar with basic use of the IG Publisher, use of the `git` source control tool, and have access to the [Github](http://github.com) website. Github access is needed to obtain or modify certain HL7 resources. The guide describes use of Github to manage your IG as well, however you may use other (or no) content management tools for your IG and publication.
 
 [References](./references.html) to background material are included, as is a trivial profile of a [resource](./artifacts.html) which can be used to observe canonical resolution behaviour.
 
 <div class="dragon" markdown=1>
-The HL7 IG Publisher and publishing ecosystem (templates, terminology servers, registries, etc.) are under continual improvement. The content of this IG is believed to correctly describe the processes as it exists at the time of publication. If the process changes, or an inaccuracy is found, please provide let the IG author know. The sources listed on the [references](./references.html) page may be more up-to-date, however, they may also lag. 
+The HL7 IG Publisher and publishing ecosystem (templates, terminology servers, registries, etc.) are under continual improvement. The content of this IG is believed to correctly describe the processes as it exists at the time of publication. If the process changes, or an inaccuracy is found, please provide let the IG author know. The sources listed on the [references](./references.html) page may be more up-to-date, however, they may also lag.
 </div>
-<br>
+</br>

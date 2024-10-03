@@ -30,7 +30,7 @@ This guide is based on release 5 of the HL7&reg; FHIR&reg; standard, which may b
 
 #### HL7
 
-The HL7&reg; FHIR&reg; standard is copyright HL7 International, and used in accordance with the [FHIR license](http://hl7.org/fhir/R4/license.html#license). 
+The HL7&reg; FHIR&reg; standard is copyright HL7 International, and used in accordance with the [FHIR license](http://hl7.org/fhir/R4/license.html#license).
 
 > *HL7, FHIR and the FHIR [FLAME DESIGN] are the registered trademarks of Health Level Seven International and their use does not constitute endorsement by HL7.*
 
