@@ -92,4 +92,4 @@ As a pre-requisite for the processes described in this guide, you should have wr
 <div class="dragon" markdown=1>
 The HL7 IG Publisher and publishing ecosystem (templates, terminology servers, registries, etc.) are under continual improvement. The content of this IG is believed to correctly describe the processes as it exists at the time of publication. If the process changes, or an inaccuracy is found, please provide let the IG author know. The sources listed on the [references](./references.html) page may be more up-to-date, however, they may also lag.
 </div>
-</br>
+<br>

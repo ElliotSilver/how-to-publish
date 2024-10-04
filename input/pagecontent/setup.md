@@ -107,7 +107,7 @@ Before using IG Publisher to publish your implementation guides, you need to set
 1. Copy `webroot/publication-feed.xml` to `webroot/package-feed.xml`, and:
 
    * Update file name in the `<atom:link>` element
-   * Update the description as appropriate for "packages" rather than "guides"
+   * Update the description and title as appropriate for "packages" rather than "guides"
 
    This file defines the RSS feed used by the FHIR registry to find the packages for the implementation guides published on your site.
 
