@@ -14,7 +14,7 @@ Let's briefly consider each of these approaches.
 
 ### CI Auto-build
 
-IG Publisher users who store their projects on [Github](http://github.com) can make use of the IG auto-build to "publish" their IG to the FHIR continuous integration site under `build.fhir.org`. This is a convenient way to allow others to see your implementation guide.
+IG Publisher users who store their projects on [Github](http://github.com) can make use of the [IG auto-build](https://github.com/FHIR/auto-ig-builder) to "publish" their IG to the FHIR continuous integration site under `build.fhir.org`. This is a convenient way to allow others to see your implementation guide.
 
 However, there are some drawbacks:
 
@@ -56,7 +56,7 @@ One of key and early decisions in authoring an IG is whether to use HL7's IG pub
 
 * Commercial vs open source model, and associated factors including cost, license, support, stability
 * Enforcement of "best practices," error checking and "correctness"
-* Integration with resource authoring tools such as [Firely's Forge](https://fire.ly/products/forge/) or HL7 [SUSHI](https://fshschool.org))
+* Integration with resource authoring tools such as [Firely's Forge](https://fire.ly/products/forge/) or HL7 [SUSHI](https://fshschool.org)
 * Command-line "compiler"-style interface vs. WYSIWYG
 * Content management and versioning approach during authoring
 * Control over look-and-feel, ADA compliance, and multi-language support
