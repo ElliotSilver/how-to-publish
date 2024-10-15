@@ -54,17 +54,17 @@ The steps below describe how to publish an implementation guide using IG Publish
    }
    ```
 
-   This file is used to populate the publication feeds. Several elements are only for the first publication of an IG. See [IG Publication Request Documentation](https://confluence.hl7.org/display/FHIR/IG+Publication+Request+Documentation) for complete details, including some additional elements. 
+   This file is used to populate the publication feeds. Several elements are only for the first publication of an IG. See [IG Publication Request Documentation](https://confluence.hl7.org/display/FHIR/IG+Publication+Request+Documentation) for complete details, including some additional elements.
 
    | Attribute | First&nbsp; Only&nbsp; | Description |
    |---|:---:|---|
    | `package-id` | | The IG package id, matching the value from `sushi-config.yaml` or your ImplementationGuide resource |
    | `version`    | | The IG version, matching the value from `sushi-config.yaml` or your ImplementationGuide resource |
-   | `path`	      | | The permanent full URL at which the IG will be available. This must be of the form `[canonical]/[label]`, where `[canonical]` is the canonical URL of your IG, and `[label]` is the version or another label for this release (e.g. "STU1"). |
+   | `path`       | | The permanent full URL at which the IG will be available. This must be of the form `[canonical]/[label]`, where `[canonical]` is the canonical URL of your IG, and `[label]` is the version or another label for this release (e.g. "STU1"). |
    | `mode`       | | {::nomarkdown}One of:<ul><li><code class=" highlighter-rouge language-plaintext">working</code> (publish at <code class=" highlighter-rouge language-plaintext">path</code>, but don't update which publication is "current");</li><li><code class=" highlighter-rouge language-plaintext">milestone</code> (publish at <code class=" highlighter-rouge language-plaintext">path</code> and at the canonical, making this the "current" release);</li><li><code class=" highlighter-rouge language-plaintext">technical-correction</code> (replace the content at <code class=" highlighter-rouge language-plaintext">path</code>; if the content at <code class=" highlighter-rouge language-plaintext">path</code> is the "current" release, replace the content at the canonical also)</ul>{:/nomarkdown} |
    | `status`     | | The IG release status, typically `release`, `trial-use`, `draft`, or `normative` (or [other options](https://confluence.hl7.org/display/FHIR/IG+Publication+Request+Documentation)); often matches the IG `releaselabel`. |
    | `sequence`   | | The release sequence, e.g. "Release 1," that this publication is part of; or, "Publication," "Release," or similar, if not using release sequences. This determines grouping on the history page. |
-   | `desc`<br>`descmd`	| | The description of the release shown on the IG history page, as plain text (desc), or as markdown (descmd). Markdown is read from the file specified using "@[filename.md]". |
+   | `desc`<br>`descmd` | | The description of the release shown on the IG history page, as plain text (desc), or as markdown (descmd). Markdown is read from the file specified using "@[filename.md]". |
    | `changes`    | | An optional relative link to a "Change Log" page in the IG |
    | `first`      | | Set to `true` on first publication of this IG; `false` or omit otherwise |
    | `title`      | &#10003; | The human readable name of the IG |

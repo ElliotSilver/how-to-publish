@@ -15,7 +15,7 @@ Note that these are not controlled publications, so they may change. They also m
 * [IG Publication Request Documentation](https://confluence.hl7.org/display/FHIR/IG+Publication+Request+Documentation)
 * [FHIR Package Registry User Documentation](https://confluence.hl7.org/display/FHIR/FHIR+Package+Registry+User+Documentation)
 
-##### IHE International publication process:
+##### IHE International publication process
 
 * [IHE build process](http://github.com/IHE/supplement-template/wiki/IG-build-for-Publication)
 
@@ -31,5 +31,5 @@ HL7 Australia has produced a set of instructions for IG publication, that, simil
 * [Guidance for FHIR IG Creation](http://build.fhir.org/ig/FHIR/ig-guidance)
 * [Implementation Guide Parameters](http://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters)
 * [FHIR Tooling Extensions IG](http://build.fhir.org/ig/FHIR/fhir-tools-ig)
-   * in particular, [IG Parameter Codes](http://hl7.org/fhir/tools/CodeSystem/ig-parameters)
+  * in particular, [IG Parameter Codes](http://hl7.org/fhir/tools/CodeSystem/ig-parameters)
 * [Using `fhir-settings.json`](http://confluence.hl7.org/display/FHIR/Using+fhir-settings.json)
