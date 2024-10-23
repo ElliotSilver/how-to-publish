@@ -50,7 +50,7 @@ The steps below describe how to publish an implementation guide using IG Publish
       "title" : "How to Publish a FHIR Implementation Guide",
       "ci-build" : "http://build.fhir.org/ig/ExampleOrg/myig",
       "category" : "Infrastructure",
-      "introduction" : "An instruction guide showing how to use the HL7 IG Publisher's -go-publish feature to publish an implementation guide to a website."
+      "introduction" : "An instructional guide showing how to use the HL7 IG Publisher's -go-publish feature to publish an implementation guide to a website."
    }
    ```
 
