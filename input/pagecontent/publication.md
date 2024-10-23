@@ -45,7 +45,7 @@ The steps below describe how to publish an implementation guide using IG Publish
       "mode" : "milestone",
       "status" : "release",
       "sequence" : "Releases",
-      "desc" : "Initial release as presented at FHIRNorth",
+      "desc" : "Initial release as presented at FHIR North.",
       "first" : true,
       "title" : "How to Publish a FHIR Implementation Guide",
       "ci-build" : "http://build.fhir.org/ig/ExampleOrg/myig",
