@@ -1,3 +1,5 @@
+This Implementation Guide was originally presented during [FHIR North](https://fhirnorth.mohawkcollege.ca), on October 23, 2024.
+
 ### Contact Us
 
 For questions or comments about this Style Guide, please contact [the author](mailto:elliot@argentixinfo.com), or propose a [change](https://github.com/ElliotSilver/how-to-publish/issues) via Github.
@@ -10,7 +12,7 @@ The complete guide, including narrative pages, may be downloaded [here](./full-i
 
 ### Dependencies
 
-This guide is based on release 5 of the HL7&reg; FHIR&reg; standard, which may be viewed [here](http://hl7.org/fhir/R5).
+This guide is based on release 4 of the HL7&reg; FHIR&reg; standard, which may be viewed [here](http://hl7.org/fhir/R4).
 
 #### Additional Dependencies
 
@@ -38,7 +40,7 @@ The HL7&reg; FHIR&reg; standard is copyright HL7 International, and used in acco
 
 This publication may include content used under license. Some content (for example, LOINC,&reg; SNOMED CT, or CPT&reg; terminologies) may be included which may require separate licensing for depending on use, such as implementation. Directly review any third-party licensing terms to ensure they permit your intended use.
 
-Automated analysis detected additional that the following may apply:
+Automated analysis detected that the following may apply:
 
 > {% include ip-statements.xhtml %}
 

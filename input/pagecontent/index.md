@@ -18,19 +18,19 @@ IG Publisher users who store their projects on [Github](http://github.com) can m
 
 However, there are some drawbacks:
 
-* A "continuous integration build" warning box on each page of the IG
+* Warnings at the top of each page of the IG that the document is "not an authorized publication," is the "continuous integration build," and "changes regularly."
 * Canonical URLs are not permitted to be located under <http://build.fhir.org>
 * Canonical URLs are not redirected to the appropriate resource or resource page (see below)
 * Extremely limited support for multiple releases. Although different branches of an IG repo can be uploaded, there is no cross-referencing between them.
 * No history page is generated, and any links to "directory of published versions" are broken
-* No registration of IG and IG package with FHIR tooling feeds
+* No registration of the IG and IG package with FHIR tooling feeds
 * Unstable availability (see below)
 
-Canonical redirects is the resolution of profile, CodeSystem, ValueSet, etc. canonical URLs to the appropriate content. For example, the url [`http://example.com/ig/myig/StructureDefinition/MyPatient`](http://example.com/ig/myig/StructureDefinition/MyPatient) is expected to return an HTML descriptive page, or JSON- or XML-formatted StructureDefinition resource representation depending on the web request. This capability depends on both the IG being published at the location where the canonical URL references, and having appropriate website configuration or redirect scripts.
+"Canonical redirect" is the resolution of the canonical URLs which identify the IG as well as IG profiles, CodeSystem, ValueSet, and so on, to the appropriate content. For example, the url [`http://example.com/ig/myig/StructureDefinition/MyPatient`](http://example.com/ig/myig/StructureDefinition/MyPatient) is expected to return an HTML descriptive page, or JSON- or XML-formatted StructureDefinition resource representation depending on the web request. This capability depends on both the IG being published at the location that the canonical URL references, and having appropriate website configuration or redirect scripts.
 
-The fact that the CI build content changes any time an update is made to your repository makes using the auto-build unsuitable for long-term availability of milestone releases. Further, CI build content for your IG's non-main branch will regularly be purged to save space; the main branch content has also occasionally been purged. The CI auto-build is not a good approach to long-term publishing.
+The fact that the CI build content changes any time an update is made to your repository makes using the auto-build unsuitable for long-term availability of milestone releases. Further, CI build content for your IG's non-main branch may be purged to save space; the main branch content has also occasionally been purged. The CI auto-build is not a good approach to long-term publishing.
 
-On the other hand, the auto-build is a decent way to make your continuous integration builds, or other temporary IG versions, available for a limited time.
+On the other hand, the auto-build is a decent way to make your continuous integration builds, or other temporary IG versions, available for a limited time, such as sharing your in-progress work with your collaborators.
 
 Note that the IG Publisher publication process described in this IG can reference auto-built IGs as part of the history of published versions, and in the registry feeds.
 
@@ -38,17 +38,17 @@ Note that the IG Publisher publication process described in this IG can referenc
 
 Another option to make your content available, is to upload the contents of the IG Publisher-generated `output` directory directly to a web server, or to copy it to [Github Pages](http://github.io). (Setting up automated builds and copying to Github Pages is covered in the [author's blog](http://www.argentixinfo.com/archives/156).)
 
-This is essentially the same as using the auto-build, except that the output ends up on your website, rather than on [build.fhir.org](http://build.fhir.org/ig). Many of the same drawbacks apply: copying the IG Publisher's output to a web server, with the same downsides (and with the same note.)
+This is essentially the same as using the auto-build, except that the output ends up on your website, rather than on [build.fhir.org](http://build.fhir.org/ig). And, this approach has many of the same issues as the CI auto-build.
 
 * A "local development build" warning box on each page of the IG
 * Canonical URLs are not redirected to the appropriate resource or resource page (although your web server configuration could theoretically address this)
-* Extremely limited support for multiple releases. Although different branches of an IG repo can be uploaded, there is no cross-referencing between them.
+* Extremely limited support for multiple releases. Although different releases of an IG could be uploaded, there is no cross-referencing between them.
 * No history page is generated, and any links to "directory of published versions" are broken
-* No registration of IG and IG package with FHIR tooling feeds
+* No registration of the IG and IG package with FHIR tooling feeds
 
 Although uploading to your own web server won't be subject to unplanned removal of IG versions, it offers few other benefits compared to use of the auto-build.
 
-Note that the IG Publisher publication process described in this IG can reference a directly uploaded continuous integration builds as part of the history of published versions, and in the registry feeds.
+Note that the IG Publisher publication process described in this IG can reference continuous integration builds uploaded to your website as part of the history of published versions, and in the registry feeds.
 
 ### Publication using Simplifier
 
@@ -56,24 +56,24 @@ One of key and early decisions in authoring an IG is whether to use HL7's IG pub
 
 * Commercial vs open source model, and associated factors including cost, license, support, stability
 * Enforcement of "best practices," error checking and "correctness"
-* Integration with resource authoring tools such as [Firely's Forge](https://fire.ly/products/forge/) or HL7 [SUSHI](https://fshschool.org)
+* Integration with resource authoring tools such as [Firely's Forge](https://fire.ly/products/forge/) or HL7's [FSH](http://hl7.org/fhir/uv/shorthand/) language compiler, [SUSHI](https://fshschool.org). (Both tools can be used with either publication mechanism)
 * Command-line "compiler"-style interface vs. WYSIWYG
-* Content management and versioning approach during authoring
+* Content management and versioning approach during authoring (including "release" management and Github integration)
 * Control over look-and-feel, ADA compliance, and multi-language support
-* Local vs. online; internal vs. SaaS.
+* Local vs. online; desktop control vs. SaaS.
 
-However, for the purposes of this discussion, the biggest difference is that a Simplifier license includes a website to publish the IG to. IG Publisher requires you to have a website to host your publication.
+However, for the purposes of this IG, the biggest difference is that a Simplifier license includes a website to publish the IG to. IG Publisher requires you to have a website to host your publication.
 
-Publishing on your own website provides an additional level of control that many prefer, including better integration. Note though, that it is possible to download and self-host a Simplifier IG.
+Publishing on your own website provides an additional level of control, and sense of ownership, that many prefer. Note though, that it is possible to download and self-host a Simplifier IG.
 
-If you use the Simplifier development tooling, the publication considerations discussed in this document don't apply. As pointed out above though, publication considerations should be only one part of the decision. Both the IG publisher and Simplifier continue to evolve, and the comparative features and differentiators will change.
+If you use the Simplifier development tooling, the publication considerations discussed in this document don't apply. As pointed out above, though, publication considerations should be only one part of the decision. Both the IG publisher and Simplifier continue to evolve, and the comparative features and differentiators will change.
 
 ### Using IG Publisher's `-go-publish` Function
 
-The HL7 IG Publisher can be used to build an IG from source resources and narrative content. The output of an IG Publisher build may be uploaded to a website or made available through the CI auto-build, as described above. Using the IG Publisher's `-go-publish` functionality, it can also be used to prep the generated content for publication, addressing several deficiencies in the basic output:
+The HL7 IG Publisher can be used to build an IG from source resources and narrative content. The output of an IG Publisher build may be uploaded to a website or made available through the CI auto-build, as described above. Using the IG Publisher's `-go-publish` functionality, it can also be used to prepare the generated content for publication, addressing several deficiencies in the basic output:
 
-* The box at the top of each page is modified to indicate that this is a publication of the IG; it indicates which IG version you are viewing, what the current (most recent) version is, and includes a link to a history page with all published IG versions listed.
-* The necessary redirect configuration or scripts are included so that canonical URLs in you IG will resolve correctly depending on whether the requesting client prefers HTML, JSON or XML.
+* The box at the top of each page is modified to indicate that this is a proper publication of the IG; it indicates which IG version you are viewing, what the current (most recent) version is, and includes a link to a history page with all published IG versions listed.
+* The necessary redirect configuration or scripts are included so that canonical URLs in your IG will resolve correctly depending on whether the requesting client prefers HTML, JSON or XML.
 * The publication directory is structured to support multiple IG publications.
 * Updates to the publication feed files are prepared, so that the IG publication can be registered with HL7 tooling.
 

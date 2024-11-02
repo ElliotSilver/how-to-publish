@@ -2,7 +2,7 @@ The steps below describe how to publish an implementation guide using IG Publish
 
 ### Prepare your Implementation Guide
 
-1. Clone the IG repository to your local system.
+1. Clone your IG repository to your local system.
 
     ```sh
     $ cd ~/src
@@ -10,13 +10,13 @@ The steps below describe how to publish an implementation guide using IG Publish
     $ cd my-ig
     ```
 
-    (If the repo is already on your system, ensure all changes have been committed.)
+   (If the repo is already on your system, ensure all changes have been committed.)
 
 1. Create a release branch of your IG repo and switch to it
 
    ```sh
    $ git checkout -b v1.0.0
-   ```  
+   ```
 
 1. Review your IG's ImplementationGuide resource (or `sushi-config.yaml`) and update as needed.
 
@@ -150,7 +150,7 @@ Once you are confident that the website is updated correctly, commit your change
    1. Commit a version of your IG ready for the next round of development, and commit. To update your IG for further development,
 
       * In your ImplementationGuide resource (or `sushi-config.yaml`), update the `status`, `releaseLabel`, and `version` elements as appropriate for the CI build; and revert dependencies to use the `current` version, if desired (also, the template version in `ig.ini`).
-      * Remove first-time elements from `publication-request.json`, and update other elements for the next release.
+      * Remove first-time elements from `publication-request.json`, and update other elements in preparation for the next release.
       * Commit the changes to your implementation guide repo.
 
 1. If you are storing the publication website in a repository, you may wish to commit the contents of the `publication` directory.
