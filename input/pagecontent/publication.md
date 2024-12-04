@@ -175,7 +175,13 @@ Assuming you were publishing your IG with a release label of "1.0.0" as the curr
       └─ package-registry.json
       └─ publication-feed.xml
       └─ publish-setup.json
+      └─ 📁 ig-build-zips
+         └─ ...
       └─ 📁 myig
+         └─ 📁 assets-hist (history page assets)
+            └─ ...
+         └─ 📁 dist-hist (history page)
+            └─ ...
          └─ (contents of the published "current" IG)
          └─ 📁 1.0.0
             └─ (contents of the published "1.0.0" IG)
