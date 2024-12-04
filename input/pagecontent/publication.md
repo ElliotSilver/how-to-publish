@@ -195,6 +195,6 @@ Assuming you were publishing your IG with a release label of "1.0.0" as the curr
       └─ searchform.template.html
 ```
 
-The contents of the `myig` and `1.0.0` directories will be (almost) the same.
+The IG content in the `webroot/myig` and `webroot/myig/1.0.0` directories will be (almost) the same.
 
 To see the impact of additional publications, you can update the version of your IG in the ImplementationGuide resource (or `sushi-config.yaml`), and in `publication-request.json` (and the other changes from the first section of this page), and run the `-go-publish` process again.
