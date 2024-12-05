@@ -137,11 +137,13 @@ You have now published your IG to your website.
 
 Once you are confident that the website is updated correctly, commit your changes.
 
+It is important to tag the source of each published version on the main branch of your repository (or keep a branch of each version) in case there is ever a need to go back and republish versions (e.g., you need to rebuild your website), or do a revision of an older release (e.g., issuing a version 1.2.1&mdash;based on version 1.2.0&mdash;after version 1.3.0 has been published). Note that due to external vocabulary, template, or tooling changes, republishing a previous version may not be possible, or may require some effort to update the publication; keeping the publication website in source control can avoid some situations that might require republishing.
+
 1. The publication process updates the list of publications known to the general FHIR tooling. In the `ig-registry` repo:
 
    1. Find the entry for your IG in `fhir-ig-list.json`, and update the missing information (shown as `"??"`). Fill in `description`, `authority` (your organization, or omit for personal sites), and `country` (two letter country codes).
 
-   1. Commit the changes, push the changes upstream, and make a pull request to merge the changes back to the `FHIR/ig-registry` repo. Once these changes are accepted, FHIR ecosystem tooling will be aware of your IG publication.
+   1. Commit the changes, push the changes upstream, and make a pull request to merge the changes back to the `FHIR/ig-registry` repo. Once these changes are accepted, the FHIR ecosystem tooling will be aware of your IG publication.
 
 1. Typically, you'll now want to commit two versions of your implementation guide to your repo.
 
