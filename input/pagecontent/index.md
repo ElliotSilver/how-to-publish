@@ -44,9 +44,11 @@ This is essentially the same as using the auto-build, except that the output end
 * Canonical URLs are not redirected to the appropriate resource or resource page (although your web server configuration could theoretically address this)
 * Extremely limited support for multiple releases. Although different releases of an IG could be uploaded, there is no cross-referencing between them.
 * No history page is generated, and any links to "directory of published versions" are broken
-* No registration of the IG and IG package with FHIR tooling feeds
+* No registration of the IG and IG package with FHIR tooling feeds (see comment below)
 
 Although uploading to your own web server won't be subject to unplanned removal of IG versions, it offers few other benefits compared to use of the auto-build.
+
+The lack of registration with FHIR tooling is a drawback for most authors; however, for users in, for example, corporate environments, the lack of public exposure could be a benefit. For those users, though, it is possible to do a variation of the `-go-publish` publication discussed in this guide without making the guide public.
 
 Note that the IG Publisher publication process described in this IG can reference continuous integration builds uploaded to your website as part of the history of published versions, and in the registry feeds.
 
@@ -78,6 +80,8 @@ The HL7 IG Publisher can be used to build an IG from source resources and narrat
 * Updates to the publication feed files are prepared, so that the IG publication can be registered with HL7 tooling.
 
 Once built using IG publisher, the IG can be uploaded to a website for wider availability.
+
+As mentioned above, a variation on the `-go-publish` approach can also be used in a corporate environment (or similar) to publish non-public implementation guides internally.
 
 Using this `-go-publish` functionality is the subject of this IG.
 

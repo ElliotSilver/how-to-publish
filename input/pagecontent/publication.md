@@ -143,7 +143,7 @@ It is important to tag the source of each published version on the main branch o
 
    1. Find the entry for your IG in `fhir-ig-list.json`, and update the missing information (shown as `"??"`). Fill in `description`, `authority` (your organization, or omit for personal sites), and `country` (two letter country codes).
 
-   1. Commit the changes, push the changes upstream, and make a pull request to merge the changes back to the `FHIR/ig-registry` repo. Once these changes are accepted, the FHIR ecosystem tooling will be aware of your IG publication.
+   1. Commit the changes, push the changes upstream, and make a pull request to merge the changes back to the `FHIR/ig-registry` repo. Once these changes are accepted, the FHIR ecosystem tooling will be aware of your IG publication. (In a corporate or similar environment with proprietary implementation guides, you may want to omit the pull request back to `FHIR/ig-registry`.)
 
 1. Typically, you'll now want to commit two versions of your implementation guide to your repo.
 
