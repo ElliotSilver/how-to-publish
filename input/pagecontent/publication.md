@@ -163,7 +163,7 @@ Assuming you were publishing your IG with a release label of "1.0.0" as the curr
 
 ```text
 📁 .
-└─ 📁 myig (or your IG)
+└─ 📁 myig (your IG project source)
    └─ ...
 └─ 📁 fhir-web-templates (can be deleted)
    └─ ...
@@ -179,14 +179,14 @@ Assuming you were publishing your IG with a release label of "1.0.0" as the curr
       └─ publish-setup.json
       └─ 📁 ig-build-zips
          └─ ...
-      └─ 📁 myig
+      └─ 📁 myig (publication directory)
          └─ 📁 assets-hist (history page assets)
             └─ ...
          └─ 📁 dist-hist (history page)
             └─ ...
-         └─ (contents of the published "current" IG)
          └─ 📁 1.0.0
-            └─ (contents of the published "1.0.0" IG)
+            └─ ... (contents of the published "1.0.0" IG)
+         └─ ... (contents of the published "current" IG)
    └─ 📁 temp
       └─ ...
    └─ 📁 templates
