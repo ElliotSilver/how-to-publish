@@ -33,3 +33,7 @@ HL7 Australia has produced a set of instructions for IG publication, that, simil
 * [FHIR Tooling Extensions IG](http://build.fhir.org/ig/FHIR/fhir-tools-ig)
   * in particular, [IG Parameter Codes](http://hl7.org/fhir/tools/CodeSystem/ig-parameters)
 * [Using `fhir-settings.json`](http://confluence.hl7.org/display/FHIR/Using+fhir-settings.json)
+
+### Other Resources
+
+* Josh Mandel on [Understanding FHIR IG Publication History](https://www.youtube.com/watch?v=kZ19rvmOa0k)
