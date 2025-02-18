@@ -10,7 +10,7 @@ Once an IG has been authored using IG Publisher, there are several ways to make 
 
 Alternatively, the IG could be authored and published through [Firely](https://fire.ly)'s [Simplifier](https://simplifier.net) product.
 
-Let's briefly consider each of these approaches.
+Before briefly discussing each of these approaches, let's consider the goals of "publication" and when it is typically appropriate. Obviously, an author wants to publish their Implementation Guide to get it in front of a wider audience. But for what purpose? The author may be seeking feedback on an in-process guide, or may want an "official" release made available. Implementers want a fixed, identifiable version to base their implementation on; a version that aligns with what their exchange partners are using for their implementations. Although it is possible to publish, and keep, every version throughout the development process of the guide, most authors won't do this. Only key versions are published, often along side the single, most recent development (or continuous integration, CI) build. Once published, there is usually an expectation that an IG remain available to the readership for historical reference.
 
 ### CI Auto-build
 
