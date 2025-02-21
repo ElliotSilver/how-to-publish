@@ -54,6 +54,8 @@ pages:
     title: References
   artifacts.xml:
   about.md:
+  changes.md: 
+    title: Change History
 
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -85,6 +87,7 @@ menu:
   Publication: publication.html
   References: references.html
   About: about.html
+  Change History: changes.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
