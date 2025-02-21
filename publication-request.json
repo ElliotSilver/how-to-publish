@@ -1,10 +1,10 @@
 {
     "package-id": "ca.argentixinfo.howtopub",
-    "version": "1.1.0",
-    "path": "http://argentixinfo.com/ig/howtopub/1.1.0",
+    "version": "1.2.0",
+    "path": "http://argentixinfo.com/ig/howtopub/1.2.0",
     "mode": "milestone",
     "status": "release",
     "sequence": "Release 1",
     "changes": "changes.html",
-    "desc": "Reflect new publication request content, and incorporate feedback."
+    "desc": "TBD"
 }
