@@ -145,7 +145,9 @@ Once you are confident that the website is updated correctly, commit your change
 
 1. Typically, you'll now want to commit two versions of your implementation guide to your repo.
 
-   1. Commit the as-published version of your IG, and tag it. This will enable you to come back to this version if you need to republish, or issue an update.
+   1. Commit the as-published version of your IG, and tag it.
+
+      Tagging your release is an important best practice that will enable you to come back to this version should you ever need to republish, or issue an update.
 
    1. Commit a version of your IG ready for the next round of development, and commit. To update your IG for further development,
 

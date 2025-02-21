@@ -5,5 +5,6 @@
     "mode": "milestone",
     "status": "release",
     "sequence": "Release 1",
-    "desc": "TBD."
+    "changes": "changes.html",
+    "desc": "Reflect new publication request content, and incorporate feedback."
 }

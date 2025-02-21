@@ -10,7 +10,7 @@ Once an IG has been authored using IG Publisher, there are several ways to make 
 
 Alternatively, the IG could be authored and published through [Firely](https://fire.ly)'s [Simplifier](https://simplifier.net) product.
 
-Let's briefly consider each of these approaches.
+Before briefly discussing each of these approaches, let's consider the goals of "publication" and when it is typically appropriate. Obviously, an author wants to publish their Implementation Guide to get it in front of a wider audience. But for what purpose? The author may be seeking feedback on an in-process guide, or may want an "official" release made available. Implementers want a fixed, identifiable version to base their implementation on; a version that aligns with what their exchange partners are using for their implementations. Although it is possible to publish, and keep, every version throughout the development process of the guide, most authors won't do this. Only key versions are published, often along side the single, most recent development (or continuous integration, CI) build. Once published, there is usually an expectation that an IG remain available to the readership for historical reference. Along with publication, most authors want the various FHIR registries to list their guide and to index the technical content, in the form of an NPM package.
 
 ### CI Auto-build
 
@@ -34,21 +34,23 @@ On the other hand, the auto-build is a decent way to make your continuous integr
 
 Note that the IG Publisher publication process described in this IG can reference auto-built IGs as part of the history of published versions, and in the registry feeds.
 
-### Upload to a Web Server or Github Pages {#upload}
+### Simple Upload to a Web Server or Github Pages {#upload}
 
-Another option to make your content available, is to upload the contents of the IG Publisher-generated `output` directory directly to a web server, or to copy it to [Github Pages](http://github.io). (Setting up automated builds and copying to Github Pages is covered in the [author's blog](http://www.argentixinfo.com/archives/156).)
+To make your content available, another option is to upload the contents of the IG Publisher-generated `output` directory *directly* to a web server, or to copy it to [Github Pages](http://github.io). (Setting up automated builds and copying to Github Pages is covered in the [author's blog](http://www.argentixinfo.com/archives/156).)
 
 This is essentially the same as using the auto-build, except that the output ends up on your website, rather than on [build.fhir.org](http://build.fhir.org/ig). And, this approach has many of the same issues as the CI auto-build.
 
 * A "local development build" warning box on each page of the IG
-* Canonical URLs are not redirected to the appropriate resource or resource page (although your web server configuration could theoretically address this)
+* Canonical URLs are not redirected to the appropriate resource or resource page (although your web server configuration or scripts could theoretically address this)
 * Extremely limited support for multiple releases. Although different releases of an IG could be uploaded, there is no cross-referencing between them.
 * No history page is generated, and any links to "directory of published versions" are broken
 * No registration of the IG and IG package with FHIR tooling feeds
 
 Although uploading to your own web server won't be subject to unplanned removal of IG versions, it offers few other benefits compared to use of the auto-build.
 
-Note that the IG Publisher publication process described in this IG can reference continuous integration builds uploaded to your website as part of the history of published versions, and in the registry feeds.
+The limitations described here around using your own website or GitHub pages are only applicable when doing a simple upload. This IG describes processes to address these issues. Also, the process described in this IG can reference continuous integration builds uploaded to your website as part of the history of published versions, and in the registry feeds.
+
+It is worth noting that certain limitations, such as not being included in the registries, may be desirable in some cases, for example, to authors working on non-public guides.
 
 ### Publication using Simplifier
 
