@@ -12,6 +12,10 @@ Alternatively, the IG could be authored and published through [Firely](https://f
 
 Before briefly discussing each of these approaches, let's consider the goals of "publication" and when it is typically appropriate. Obviously, an author wants to publish their Implementation Guide to get it in front of a wider audience. But for what purpose? The author may be seeking feedback on an in-process guide, or may want an "official" release made available. Implementers want a fixed, identifiable version to base their implementation on; a version that aligns with what their exchange partners are using for their implementations. Although it is possible to publish, and keep, every version throughout the development process of the guide, most authors won't do this. Only key versions are published, often along side the single, most recent development (or continuous integration, CI) build. Once published, there is usually an expectation that an IG remain available to the readership for historical reference. Along with publication, most authors want the various FHIR registries to list their guide and to index the technical content, in the form of an NPM package.
 
+  Note: This guide was originally presented as a session at [FHIR North 2024](https://fhirnorth.mohawkcollege.ca):
+
+  <figure style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/9Bi4AD3gHYM?si=gxXMGI5EFQZ5_Q7u" title="Publishing an Implementation Guide Website using HL7 IG Publisher FHIR - on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><figcaption><bold>A walkthrough of publishing an IG based on this implementation guide.</bold></figcaption></figure>
+
 ### CI Auto-build
 
 IG Publisher users who store their projects on [Github](http://github.com) can make use of the [IG auto-build](https://github.com/FHIR/auto-ig-builder) to "publish" their IG to the FHIR continuous integration site under `build.fhir.org`. This is a convenient way to allow others to see your implementation guide.

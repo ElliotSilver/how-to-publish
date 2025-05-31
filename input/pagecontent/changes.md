@@ -1,5 +1,10 @@
 Significant changes by release:
 
+### 1.2.0 (2025-05-31)
+
+* Added link to video
+* Added note about escaping `'` and `"` in `introduction` element in `publication-request.json`
+
 ### 1.1.0 (2025-02-20)
 
 * Addition of [change log](./changes.html)
