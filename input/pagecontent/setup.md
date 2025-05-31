@@ -53,7 +53,8 @@ Before using IG Publisher to publish your implementation guides, you need to set
          "server": "apache",
          "org": "Example Organization",
          "search-template": "searchform.template.html",
-         "index-template": "index.template"
+         "index-template": "index.template",
+         "clone-xml-json": true
       },
       "feeds": {
          "package": "package-feed.xml",
@@ -72,8 +73,9 @@ Before using IG Publisher to publish your implementation guides, you need to set
    This [file](https://confluence.hl7.org/pages/viewpage.action?pageId=81027536#MaintainingaFHIRIGPublication-Documentationforpublish-setup.json) defines the structure of your publication site, and where certain files are found.
 
    * `url` is the base url of the web site
-   * `server` is one of the supported websever types: `apache` (apache or nginx), `litespeed`, `asp-old`, `asp-new`
+   * `server` is one of the supported webserver types: `apache` (apache or nginx), `cloud` (S3, etc. or GitHub pages) `asp-old`, `asp-new`. This is used to determine how to construct redirects.
    * `org` is your organization name
+   * `clone-xml-json` determines whether the redirects to handle Accept headers of, for example, `application/json`, `application/fhir+json` and `application/json+fhir` require distinct copies of the target file (when true) or whether all of those content types can be supported with a single file (when false).
    * `layout-rules` specify how IGs are published under the site. You may specify entries for specific IGs, or patterns that your IGs follow:
       * `npm` is the package id, or pattern (with wildcards) of package ids, that this layout rules applies to. The package id is made up of period-separated components.
       * `canonical` is the canonical URL of IGs following this layout rule. It is either fully specified, or describes how to create canonical URLs from the package id components. This example shows a canonical generated using the third component of the package id.

@@ -9,7 +9,7 @@ name: HowToPubIG
 title: How to Publish a FHIR Implementation Guide
 description: A Guide to HL7 IG Publisher's -go-publish feature
 status: active # draft | active | retired | unknown
-version: 1.0.0
+version: 1.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2024+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -54,6 +54,8 @@ pages:
     title: References
   artifacts.xml:
   about.md:
+  changes.md: 
+    title: Change History
 
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -85,6 +87,7 @@ menu:
   Publication: publication.html
   References: references.html
   About: about.html
+  Change History: changes.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
