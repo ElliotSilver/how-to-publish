@@ -1,5 +1,9 @@
 Many implementation guide (IG) authors are familiar with using [HL7](http://hl7.org)'s [IG Publisher](https://github.com/HL7/fhir-ig-publisher) to author and build an implementation guide. However the process of actually "publishing" an authored IG is less familiar to many. To make an IG available to the public (or at least to a larger audience than the author), it should be on an accessible website. Further, various FHIR tooling depends being able to find an IG and its packages listed in the central registries. This IG documents the process of publishing an IG to a website using IG Publisher. It also discusses the differences between "publishing" a FHIR IG by simply uploading the IG build output to your web server; and, by uploading the results of the IG Publisher `-go-publish` functionality.
 
+  This IG was originally presented as a session at [FHIR North 2024](https://fhirnorth.mohawkcollege.ca):
+
+  <figure style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/9Bi4AD3gHYM?si=gxXMGI5EFQZ5_Q7u" title="Publishing an Implementation Guide Website using HL7 IG Publisher FHIR - on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><figcaption><bold>A walkthrough of publishing an IG based on this implementation guide.</bold></figcaption></figure>
+
 This IG is not a tutorial on IG authoring; on general IG Publisher usage; or, on related tooling, such as [SUSHI](https://fshschool.org).
 
 Once an IG has been authored using IG Publisher, there are several ways to make it available to the public:

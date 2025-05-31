@@ -50,7 +50,7 @@ The steps below describe how to publish an implementation guide using IG Publish
       "title" : "How to Publish a FHIR Implementation Guide",
       "ci-build" : "http://build.fhir.org/ig/ExampleOrg/myig",
       "category" : "Infrastructure",
-      "introduction" : "An instructional guide showing how to use the HL7 IG Publisher's -go-publish feature to publish an implementation guide to a website."
+      "introduction" : "An instructional guide showing how to use the HL7 IG Publisher&apos;s -go-publish feature to publish an implementation guide to a website."
    }
    ```
 
@@ -70,7 +70,7 @@ The steps below describe how to publish an implementation guide using IG Publish
    | `title`      | &#10003; | The human readable name of the IG |
    | `ci-build`   | &#10003; | The location of the continuous integration build of the IG; often under [`http://build.fhir.org/ig/`](http://build.fhir.org/ig/) |
    | `category`   | &#10003; | A category for the guide; see the categories on the [FHIR registry](http://fhir.org/guides/registry/). |
-   | `introduction` | &#10003; | A human readable description of the intent of the IG; shown on the IG history page. |
+   | `introduction` | &#10003; | A human readable description of the intent of the IG; shown on the IG history page. Note that `'` and `"` in the description should be replaced with the HTML entities `&apos;` and `&quot;` respectively. |
    {:.table-striped}
 
 1. Ensure you can do a clean build of the IG.
