@@ -6,3 +6,4 @@
 
 # This link should point to the base of the publication and is intended to be independent of version
 The link 'http://argentixinfo.com/ig/howtopub' for "How to Publish a FHIR Implementation Guide" is a canonical link and is therefore unsafe with regard to versions
+
